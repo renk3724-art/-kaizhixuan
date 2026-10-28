@@ -1,6 +1,6 @@
 import { strToU8, zipSync } from 'fflate';
 import downloadSourceCode from './downloadSource.ts?raw';
-import gitignore from '../.gitignore?raw';
+import { gitignoreContent } from './gitignoreContent';
 import indexHtml from '../index.html?raw';
 import packageJson from '../package.json?raw';
 import packageLock from '../package-lock.json?raw';
@@ -30,7 +30,7 @@ export const sourceArchiveName = 'kaizhixuan-source.zip';
 
 export async function createSourceArchiveUrl(): Promise<string> {
   const files: Record<string, Uint8Array> = {
-    '.gitignore': strToU8(gitignore),
+    '.gitignore': strToU8(gitignoreContent),
     'README.md': strToU8(readme),
     'index.html': strToU8(indexHtml),
     'package.json': strToU8(packageJson),
