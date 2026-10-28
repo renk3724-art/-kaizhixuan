@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-serif: "Instrument Serif", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --color-ink: #1a1714;
+  --color-paper: #f6f1e7;
+  --color-cinnabar: #c44832;
+  --color-gold: #7a5a28;
+  --color-desk: #110e0c;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #110e0c;
+  color: #1a1714;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #c44832;
+  color: #fffaf3;
+}
+
+:focus-visible {
+  outline: 2px solid #c44832;
+  outline-offset: 2px;
+}
+
+.atelier {
+  background-color: #07090d;
+  background-image:
+    linear-gradient(180deg, rgba(7, 9, 13, 0.2), rgba(7, 9, 13, 0.72)),
+    url("/images/bg-tech.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.paper-field {
+  background-color: #07090d;
+  color: #f4f7fb;
+}
+
+.night .bg-\[\#f6f1e7\],
+.night .bg-\[\#f6f1e7\]\/95,
+.night .bg-\[\#f6f1e7\]\/90,
+.night .bg-\[\#f7f3ea\],
+.night .bg-\[\#fbf6ee\],
+.night .bg-\[\#fbf7f0\],
+.night .bg-\[\#f8ebe6\],
+.night .bg-\[\#f8ebe6\]\/90,
+.night .bg-\[\#f7f0e2\],
+.night .bg-\[\#efe7da\],
+.night .bg-\[\#f1ece4\] {
+  background-color: #10141c;
+}
+
+.night .bg-white,
+.night .bg-white\/70,
+.night .bg-white\/60 {
+  background-color: #161b24;
+}
+
+.night .text-\[\#1a1714\],
+.night .text-\[\#3f382f\],
+.night .text-\[\#3d342c\],
+.night .text-\[\#4e463c\] {
+  color: #f4f7fb;
+}
+
+.night .text-\[\#5c534a\],
+.night .text-\[\#5e564e\],
+.night .text-\[\#6f655b\],
+.night .text-\[\#8a7d6d\],
+.night .text-\[\#8a7568\],
+.night .text-\[\#a08c72\],
+.night .text-\[\#a3988b\],
+.night .text-\[\#b3a898\] {
+  color: #9aa6b4;
+}
+
+.night .border-\[\#eadfce\],
+.night .border-\[\#eadfce\]\/80,
+.night .border-\[\#e4d9c6\],
+.night .border-\[\#e0d4c2\],
+.night .border-\[\#e6dccb\],
+.night .border-\[\#e7e0d6\],
+.night .border-\[\#e4d7c4\],
+.night .border-\[\#f0e6d8\] {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.night .text-\[\#c44832\],
+.night .text-\[\#8e3a28\],
+.night .text-\[\#6e4c22\] {
+  color: #d7e4f5;
+}
+
+.night .bg-\[\#fdecea\],
+.night .bg-\[\#fbf0dc\],
+.night .bg-\[\#e7f4ec\] {
+  background-color: #1a2230;
+  color: #d7e4f5;
+}
+
+.ledger-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #ddd2c0 transparent;
+}
+
+.noscroll {
+  scrollbar-width: none;
+}
+
+.noscroll::-webkit-scrollbar {
+  display: none;
+}
+
+#goods {
+  scroll-margin-top: 7.5rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(104%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes seal-pop {
+  0% {
+    transform: scale(1.28) rotate(-16deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(-8deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.45s ease both;
+}
+
+.sheet-in {
+  animation: sheet-in 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.fade-in {
+  animation: fade-in 0.22s ease both;
+}
+
+.seal-pop {
+  animation: seal-pop 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.bump {
+  animation: bump 0.35s ease;
+}
+
+.toast-in {
+  animation: toast-in 0.28s ease both;
+}
+
+.wordmark-macron {
+  display: inline-block;
+  transform: translateY(-0.32em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .sheet-in,
+  .fade-in,
+  .seal-pop,
+  .bump,
+  .toast-in {
+    animation: none;
+  }
+}
